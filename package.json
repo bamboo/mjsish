@@ -1,0 +1,39 @@
+{
+  "name": "mjsish",
+  "version": "0.0.0",
+  "description": "Metascript interactive shell and IDE supporting tools",
+  "main": "lib/main.js",
+  "bin": {
+    "mjsish": "./bin/mjsish"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bamboo/mjsish.git"
+  },
+  "keywords": [
+    "mjs",
+    "metascript",
+    "repl"
+  ],
+  "author": "Rodrigo B. de Oliveira <rbo@acm.org>",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/bamboo/mjsish/issues"
+  },
+  "homepage": "https://github.com/bamboo/mjsish",
+  "dependencies": {
+    "meta-script": "0.0.43",
+    "source-map-support": "^0.2.7"
+  },
+  "devDependencies": {
+    "event-stream": "^3.1.7",
+    "gulp": "^3.8.6",
+    "gulp-mjs": "0.0.7",
+    "gulp-mocha": "^0.5.2",
+    "hash-require": "0.0.4",
+    "masakari": "^0.1.0"
+  }
+}
