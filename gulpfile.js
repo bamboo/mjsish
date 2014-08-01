@@ -5,30 +5,26 @@ var mjs = require('gulp-mjs');
 var mocha = require('gulp-mocha');
 var es = require('event-stream');
 var path = require('path');
-var Stream = require('stream').Stream;
 
 var paths = {
     src: ['lib/**/*.mjs', 'bin/**/*.mjs'],
     dest: '.',
-    test: {
-      src: ['test/*.mjs'],
-      dest: 'test'
-    }
+    test: {src: ['test/*.mjs']}
 };
 
 function build() {
   return compile(paths.src, paths.dest);
 }
 
-function compile(src, dest) {
-  return combine(
-    gulp.src(src),
+function compile(src) {
+  return pipeline(
+    gulp.src(src, {base: '.'}),
     mjs({debug: true}),
-    gulp.dest(dest))
+    gulp.dest(paths.dest))
   .on('error', onError);
 }
 
-function combine() {
+function pipeline() {
   return es.pipeline.apply(null, arguments);
 }
 
@@ -40,8 +36,8 @@ var javascriptFiles = es.map(function (data, callback) {
 });
 
 function test() {
-  return combine(
-    compile(paths.test.src, paths.test.dest),
+  return pipeline(
+    compile(paths.test.src),
     javascriptFiles,
     mocha({reporter: 'spec'}));
 }
