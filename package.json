@@ -27,7 +27,6 @@
   "dependencies": {
     "colors": "^0.6.2",
     "commander": "^2.3.0",
-    "keypress": "^0.2.1",
     "meta-script": "0.0.43",
     "mori": "^0.2.9",
     "rx": "^2.3.1",
@@ -40,8 +39,7 @@
     "gulp-mjs": "0.0.7",
     "gulp-mocha": "^0.5.2",
     "hash-require": "0.0.4",
-    "masakari": "^0.1.0",
-    "meta-script": "0.0.43",
+    "masakari": "^0.1.1",
     "mjs-check": "0.0.2"
   }
 }
