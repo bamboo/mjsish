@@ -29,7 +29,6 @@
     "commander": "^2.3.0",
     "meta-script": "0.0.43",
     "mori": "^0.2.9",
-    "rx": "^2.3.1",
     "source-map-support": "^0.2.7"
   },
   "devDependencies": {
