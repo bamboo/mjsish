@@ -16,4 +16,4 @@ describe
       #->
         var subject = new mjs.Evaluator ()
         subject.eval 'var a = 42'
-        expect (subject.eval ('a + 1').value).to.equal 43
+        expect (subject.eval ('a').value).to.equal 42
