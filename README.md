@@ -1,7 +1,9 @@
 # mjsish
-[![Build Status](https://travis-ci.org/bamboo/mjsish.svg?branch=master)](https://travis-ci.org/bamboo/mjsish)
+[![build Status][travis-ci-img]][travis-ci-link]
+[![dependency status][dm-status-img]][dm-status-link]
+[![dev dependency status][dev-dm-status-img]][dev-dm-status-link]
 
-[Metascript](https://github.com/massimiliano-mantione/metascript) interactive shell and IDE supporting tools.
+[Metascript][metascript] interactive shell and IDE supporting tools.
 
 ## Setup
 
@@ -30,3 +32,11 @@ _mjsish -j_ gets the repl to output the generated javascript code before evaluat
  * symbol server - watches a directory with mjs files and allow queries for symbol locations
 * TAB completion
 * --require command line to automatically inject modules into the repl environment
+
+[travis-ci-img]: https://travis-ci.org/bamboo/mjsish.svg?branch=master
+[travis-ci-link]: https://travis-ci.org/bamboo/mjsish
+[dm-status-img]: https://david-dm.org/bamboo/mjsish.svg
+[dm-status-link]: https://david-dm.org/bamboo/mjsish
+[dev-dm-status-img]: https://david-dm.org/bamboo/mjsish/dev-status.svg
+[dev-dm-status-link]: https://david-dm.org/bamboo/mjsish#info=devDependencies
+[metascript]: https://github.com/massimiliano-mantione/metascript
