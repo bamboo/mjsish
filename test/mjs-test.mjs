@@ -17,3 +17,10 @@ describe
         var subject = new mjs.Evaluator ()
         subject.eval 'var a = 42'
         expect (subject.eval ('a').value).to.equal 42
+
+    it
+      'remembers #metaimport'
+      #->
+        var subject = new mjs.Evaluator ()
+        subject.eval '#metaimport masakari'
+        expect (subject.eval ('21 |> 2 *').value).to.equal 42
