@@ -19,11 +19,16 @@ describe
         expect (subject.eval ('a').value).to.equal 42
 
     it
-      'remembers #metaimport'
+      'remembers #defmacro'
       #->
+        const macro =
+         ("#defmacro str\n" +
+          "  unary\n" +
+          "  LOW\n" +
+          "  expand: e -> ast.new-value String(e.val)")
         var subject = new mjs.Evaluator ()
-        subject.eval '#metaimport masakari'
-        expect (subject.eval ('21 |> 2 *').value).to.equal 42
+        subject.eval macro
+        expect (subject.eval ('str 42').value).to.equal '42'
 
     ['#metaimport masakari',
      '#metaimport\n  hash-require\n  masakari'].for-each
