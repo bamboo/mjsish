@@ -24,3 +24,13 @@ describe
         var subject = new mjs.Evaluator ()
         subject.eval '#metaimport masakari'
         expect (subject.eval ('21 |> 2 *').value).to.equal 42
+
+    ['#metaimport masakari',
+     '#metaimport\n  hash-require\n  masakari'].for-each
+      (metaimport, index) ->
+        it
+          'remembers #metaimport (' + (index + 1) + ')'
+          #->
+            var subject = new mjs.Evaluator ()
+            subject.eval metaimport
+            expect (subject.eval ('21 |> 2 *').value).to.equal 42
