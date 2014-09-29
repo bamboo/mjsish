@@ -9,7 +9,10 @@ var path = require('path');
 var paths = {
     src: ['lib/**/*.mjs', 'bin/**/*.mjs'],
     dest: '.',
-    test: {src: ['test/*.mjs']}
+    test: {
+      src: ['test/*.mjs'],
+      lib: ['test/lib/*.mjs']
+    }
 };
 
 function build() {
@@ -42,6 +45,10 @@ function test() {
     mocha({reporter: 'spec'}));
 }
 
+function testLib() {
+  return compile(paths.test.lib);
+}
+
 function isJavascriptFile(f) {
   return f.path && path.extname(f.path) == '.js';
 }
@@ -52,6 +59,8 @@ function onError(err) {
 
 gulp.task('build', build);
 
-gulp.task('test', ['build'], test);
+gulp.task('test-lib', testLib);
+
+gulp.task('test', ['build', 'test-lib'], test);
 
 gulp.task('default', ['test']);
