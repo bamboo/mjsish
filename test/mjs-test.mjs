@@ -10,6 +10,12 @@
   chai expect
   '../lib/mjs'
 
+fun assert-no-errors result ->
+  if result.errors
+    (expect result.errors).to.equal ([])
+  else
+    ()
+
 describe
   'Evaluator'
   #->
@@ -39,14 +45,16 @@ describe
           'remembers #metaimport (' + (index + 1) + ')'
           #->
             var subject = new mjs.Evaluator ()
-            subject.eval metaimport
-            expect (subject.eval ('21 |> 2 *').value).to.equal 42
-            
+            assert-no-errors (subject.eval metaimport)
+            var result = subject.eval '21 |> 2 *'
+            assert-no-errors result
+            expect (result.value).to.equal 42
+
     it
       'can evaluate against specific path so relative metaimports work'
       #->
         var subject = new mjs.Evaluator ()
         var options = {filename: #external module.filename}
         var result = subject.eval ("#metaimport './lib/metamodule'", options)
-        (expect result.errors).to.not.exist
+        assert-no-errors result
         (expect subject.eval ('str 42', options).value).to.equal '42'
