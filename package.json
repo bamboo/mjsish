@@ -36,7 +36,7 @@
     "chai": "^1.9.1",
     "event-stream": "^3.1.7",
     "gulp": "^3.8.6",
-    "gulp-mjs": "^0.0.9",
+    "gulp-mjs": "0.0.10",
     "gulp-mocha": "^0.5.2",
     "hash-require": "0.0.4",
     "masakari": "^0.2.0",
