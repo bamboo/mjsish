@@ -1,6 +1,6 @@
 {
   "name": "mjsish",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Metascript interactive shell and IDE supporting tools",
   "main": "lib/main.js",
   "bin": {
