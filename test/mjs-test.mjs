@@ -39,7 +39,8 @@ describe
         expect (subject.eval ('str 42').value).to.equal '42'
 
     ['#metaimport masakari',
-     '#metaimport\n  hash-require\n  masakari'].for-each
+     "#metaimport\n  masakari",
+     "#metaimport\n  hash-require\n  masakari"].for-each
       (metaimport, index) ->
         it
           'remembers #metaimport (' + (index + 1) + ')'

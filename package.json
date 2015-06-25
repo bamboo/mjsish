@@ -27,7 +27,7 @@
   "dependencies": {
     "colors": "^0.6.2",
     "commander": "^2.3.0",
-    "meta-script": "0.0.45",
+    "meta-script": "^0.0.47",
     "mori": "^0.2.9",
     "require-like": "^0.1.2",
     "source-map-support": "^0.2.7"
